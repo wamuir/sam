@@ -3,7 +3,6 @@
 package entity
 
 import (
-	"encoding/json"
 	"net/url"
 )
 
@@ -23,16 +22,6 @@ var API = url.URL{
 type Response struct {
 	TotalRecords int      `json:"totalRecords"`
 	EntityData   []Entity `json:"entityData"`
-}
-
-// MarshalText marshals a sam.Response into JSON
-func (r *Response) MarshalText() ([]byte, error) {
-	return json.Marshal(r)
-}
-
-// UnmarshalText unmarshals JSON into a sam.Response
-func (r *Response) UnmarshalText(text []byte) error {
-	return json.Unmarshal(text, r)
 }
 
 // Entity is a SAM Entity
