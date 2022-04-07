@@ -7,14 +7,14 @@ import (
 )
 
 // version is the version of the SAM Entity API
-const version = 2.5
+const version = 3.3
 
 // API is the URL for the SAM Entity API.  Query parameters including API key
 // should be added to the RawQuery field
 var API = url.URL{
 	Scheme: "https",
 	Host:   "api.sam.gov",
-	Path:   "entity-information/v2/entities",
+	Path:   "entity-information/v3/entities",
 }
 
 // Response is the SAM Entity API's JSON response to a request for Public API
@@ -37,7 +37,6 @@ type Entity struct {
 type Registration struct {
 	SAMRegistered              string `json:"samRegistered"`
 	UEISAM                     string `json:"ueiSAM"`
-	UEIDUNS                    string `json:"ueiDUNS"`
 	EntityEFTIndicator         string `json:"entityEFTIndicator"`
 	CAGECode                   string `json:"cageCode"`
 	DODAAC                     string `json:"dodaac"`
@@ -49,7 +48,7 @@ type Registration struct {
 	RegistrationDate           string `json:"registrationDate"`
 	LastUpdateData             string `json:"lastUpdateDate"`
 	RegistrationExpirationDate string `json:"registrationExpirationDate"`
-	ActivationData             string `json:"activationDate"`
+	ActivationDate             string `json:"activationDate"`
 	UEIStatus                  string `json:"ueiStatus"`
 	UEIExpirationDate          string `json:"ueiExpirationDate"`
 	UEICreationDate            string `json:"ueiCreationDate"`

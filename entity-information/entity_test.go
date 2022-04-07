@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-//go:embed testdata/120406462.PUBLIC.json
+//go:embed testdata/C6M7C2FLKER5.PUBLIC.json
 var x []byte
 
 func TestUnmarshalJSON(t *testing.T) {
